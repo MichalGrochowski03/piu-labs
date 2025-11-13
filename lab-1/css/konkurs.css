@@ -1,0 +1,158 @@
+/* Jasny motyw */
+:root {
+  --tlo: #f9f9f9;
+  --tekst: #000;
+  --panel: #fff;
+  --cien: rgba(0, 0, 0, 0.2);
+  --przycisk: #4CAF50;
+  --przycisk-hover: #45a049;
+  --pole-bg: #fff;
+  --pole-tekst: #000;
+  --obramowanie: #ccc;
+}
+
+/* Layout */
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  background-color: var(--tlo);
+  color: var(--tekst);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+main {
+  width: 100%;
+  max-width: 500px;
+}
+
+.naglowek {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.naglowek h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+/* Formularz */
+form.formularz {
+  background-color: var(--panel);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--cien);
+  position: relative;
+}
+
+h1 {
+  font-size: 1.8rem;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+/* Przełącznik */
+.toggle-theme {
+  position: flex;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Pola formularza */
+label {
+  display: block;
+  margin-top: 0.7rem;
+}
+
+input,
+select,
+button {
+  font-size: 16px;
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  box-sizing: border-box;
+  background-color: var(--pole-bg);
+  color: var(--pole-tekst);
+  border: 1px solid var(--obramowanie);
+  border-radius: 4px;
+}
+
+input[type="color"] {
+  height: 40px;
+  cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+fieldset {
+  margin-top: 1rem;
+  border: 1px solid var(--obramowanie);
+  padding: 0.7rem;
+  border-radius: 4px;
+}
+
+legend {
+  padding: 0 6px;
+}
+
+.zgoda {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+/* Przycisk */
+button {
+  margin-top: 1rem;
+  background-color: var(--przycisk);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--przycisk-hover);
+}
+
+/* Ciemny motyw */
+
+#theme-toggle:checked + main form {
+  --tlo: #1c1c1c;
+  --tekst: #f1f1f1;
+  --panel: #1c1c1c;
+  --cien: rgba(255, 255, 255, 0.1);
+  --pole-bg: #383838;
+  --pole-tekst: #f1f1f1;
+  --obramowanie: #666;
+  background-color: var(--panel);
+  color: var(--tekst);
+}
+
+
+
+#theme-toggle:checked + main input,
+#theme-toggle:checked + main select,
+#theme-toggle:checked + main textarea {
+  background-color: var(--pole-bg);
+  color: var(--pole-tekst);
+  border-color: var(--obramowanie);
+}
