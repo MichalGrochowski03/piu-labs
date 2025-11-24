@@ -7,6 +7,17 @@ html {
 body {
   margin: 1rem;
   padding: 0;
+    text-align: center;
+  background-color: #f4f4f9;
+}
+
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
 }
 
 a {
@@ -17,3 +28,4 @@ a {
 a:hover {
   text-decoration: underline; /* podkreślenie przy najechaniu */
 }
+
