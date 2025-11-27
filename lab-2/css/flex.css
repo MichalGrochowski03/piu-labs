@@ -1,0 +1,310 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  background-color: #f5f6f5;
+}
+
+.theme-picker {
+  background-color: #f4f5dc;
+  border: 2px solid #d87802;
+  border-radius: 8px;
+  padding: 12px 20px;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.theme-picker legend {
+  padding: 0 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.theme-picker label {
+  margin-right: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.theme-picker input[type='radio'] {
+  margin-right: 6px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #f4f5dc;
+  border: 2px solid #d87802;
+  border-radius: 10px;
+}
+
+.item {
+  background-color: #0402fc;
+  color: white;
+  font-size: 16px;
+  width: 200px;
+  height: 60px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*blue*/
+header:has(input[name='version'][value='blue']:checked) ~ .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+
+header:has(input[name='version'][value='blue']:checked) ~ .container .item {
+  flex: 0 0 auto;
+  height: 60px;
+  width: 30%;
+}
+
+@media (max-width: 1024px) {
+  header:has(input[name='version'][value='blue']:checked) ~ .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  header:has(input[name='version'][value='blue']:checked) ~ .container .item {
+    flex: none;
+    width: 60%;
+  }
+}
+
+/*red*/
+header:has(input[name='version'][value='red']:checked) ~ .container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+header:has(input[name='version'][value='red']:checked) ~ .container .item {
+  background-color: #fc0204;
+  color: white;
+  height: 60px;
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(1) {
+  order: 3;
+  flex-grow: 2;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(1)::after {
+  content: '(Jestem większy i na środku!)';
+  font-size: 80%;
+  font-weight: normal;
+  margin-top: 5px;
+  text-align: center;
+}
+
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(2) {
+  order: 1;
+}
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(3) {
+  order: 2;
+}
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(4) {
+  order: 4;
+}
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(5) {
+  order: 5;
+}
+
+@media (max-width: 1024px) {
+  header:has(input[name='version'][value='red']:checked) ~ .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  header:has(input[name='version'][value='red']:checked) ~ .container .item {
+    height: 60px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 48%;
+    order: 0;
+  }
+
+  header:has(input[name='version'][value='red']:checked)
+    ~ .container
+    .item:nth-child(2) {
+    order: 1;
+  }
+  header:has(input[name='version'][value='red']:checked)
+    ~ .container
+    .item:nth-child(3) {
+    order: 2;
+  }
+
+  header:has(input[name='version'][value='red']:checked)
+    ~ .container
+    .item:nth-child(1) {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  header:has(input[name='version'][value='red']:checked)
+    ~ .container
+    .item:nth-child(4) {
+    order: 4;
+  }
+  header:has(input[name='version'][value='red']:checked)
+    ~ .container
+    .item:nth-child(5) {
+    order: 5;
+  }
+}
+
+/*green*/
+header:has(input[name='version'][value='green']:checked) ~ .container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+header:has(input[name='version'][value='green']:checked) ~ .container .item {
+  background-color: #048204;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  border-radius: 6px;
+}
+
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(1) {
+  flex: 5;
+}
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(2) {
+  flex: 4;
+}
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(3) {
+  flex: 3;
+}
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(4) {
+  flex: 2;
+}
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(5) {
+  flex: 1;
+}
+
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(1) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/*emoji_left*/
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(1)::before {
+  content: '😀';
+  font-size: 2em;
+  margin-right: auto;
+}
+
+/*emoji_right*/
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(1)::after {
+  content: '😀';
+  font-size: 2em;
+  margin-left: auto;
+}
+
+@media (max-width: 1024px) {
+  header:has(input[name='version'][value='green']:checked) ~ .container {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+  }
+
+  header:has(input[name='version'][value='green']:checked) ~ .container .item {
+    flex: none;
+    flex-basis: auto;
+    height: 60px;
+    min-height: 60px;
+    max-height: 60px;
+  }
+
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(5) {
+    order: 1;
+    width: 30%;
+  }
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(4) {
+    order: 2;
+    width: 45%;
+  }
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(3) {
+    order: 3;
+    width: 60%;
+  }
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(2) {
+    order: 4;
+    width: 75%;
+  }
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(1) {
+    order: 5;
+    width: 90%;
+  }
+}
