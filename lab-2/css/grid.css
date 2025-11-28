@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #e0e0e0;
+}
+
+
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+
+header {
+  background: #f49c11;
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header .logo {
+  background: white;    
+  width: auto;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative; 
+  font-size: 1.2rem;  
+}
+
+header .logo::before {
+  content: "Logo";
+  font-weight: bold;
+  color: black;
+  background: white;
+  padding: 0 12px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+  margin-right: 8px;   
+}
+
+nav {
+  background: #2980b9;
+  display: flex;
+  flex-direction: row;     
+  justify-content: center; 
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  flex-wrap: wrap;    
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+main {
+  padding: 20px;
+  background: #ffffff;
+}
+
+main h2,
+main p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+
+aside {
+  background: #d4efdf;
+  padding: 20px;
+}
+
+aside h3,
+aside p {
+  margin-bottom: 1rem;
+}
+
+aside div {
+  text-align: center;
+}
+
+aside div span {
+  display: inline-block;
+  font-size: 3rem;
+  margin: 6px;
+}
+
+footer {
+  background: #27ae60;
+  color: white;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 1024px) {
+
+  .container {
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+
+    grid-template-areas:
+      "header header"
+      "nav    nav"
+      "main   aside"
+      "footer footer";
+  }
+
+  aside div {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    gap: 16px 24px;
+  }
+
+  aside div span {
+    margin: 0;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  nav {
+    grid-area: nav;
+
+    flex-direction: row;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
+
+  nav a {
+    padding: 10px 18px;
+  }
+
+  main {
+    grid-area: main;
+    padding: 24px;
+  }
+
+  aside {
+    grid-area: aside;
+    padding: 24px;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+}
