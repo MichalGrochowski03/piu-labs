@@ -1,0 +1,173 @@
+html {
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 1rem;
+  padding: 0;
+  background: white;
+}
+
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+
+:root {
+    --img: url("../polo_b.png");
+    --accent: #2b5faa;
+}
+
+
+#blue:checked  ~ .product { --img: url("../polo_b.png"); --accent:#2b5faa; }
+#red:checked   ~ .product { --img: url("../polo_r.png"); --accent:#d3352f; }
+#green:checked ~ .product { --img: url("../polo_g.png"); --accent:#2a8f3c; }
+#yellow:checked~ .product { --img: url("../polo_y.png"); --accent:#e8bc22; }
+
+.product {
+    width: min(100%, 900px);
+    margin: 0 auto;
+    padding: 20px;
+
+    background: #eeeeee;
+    border: 3px solid #ccc;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.image {
+    background: white var(--img) center/cover no-repeat;
+
+    flex: 1 1 500px;
+    min-width: 300px;
+
+    width: min(500px, 100%);
+    aspect-ratio: 1 / 1;
+
+    border: 3px solid var(--accent);
+    border-radius: 12px;
+}
+
+.info {
+    flex: 1 1 300px;
+    min-width: 300px;
+
+    background: #eeeeee;
+    padding: 10px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+    align-items: flex-start;
+}
+
+.product > .info {
+    order: 2; 
+}
+
+.product > .info:nth-child(2) {
+    text-align: center;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.promo {
+    background: var(--accent);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.colors {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    margin: 10px 0 20px;
+    justify-content: left;
+}
+
+.product > .info:nth-child(2) .colors {
+    justify-content: center;
+}
+
+
+.dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 3px solid #555;
+    cursor: pointer;
+}
+
+.blue  { background:#2b5faa; }
+.red   { background:#d3352f; }
+.green { background:#2a8f3c; }
+.yellow{ background:#e8bc22; }
+
+
+.sizes {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: left;
+}
+
+.product > .info:nth-child(2) .sizes {
+    justify-content: center;
+}
+
+.sizes button {
+    padding: 8px 16px;
+    background: white;
+    border: 2px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.sizes button.active {
+    background: var(--accent);
+    color: white;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.add {
+    background: var(--accent);
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 3</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <h1>Lab 3</h1>
-    <a href="..">Powrót</a>
-  </body>
+    <link rel="stylesheet" href="css/polo.css">
+</head>
+<body>
+
+<input type="radio" name="color" id="blue" checked>
+<input type="radio" name="color" id="red">
+<input type="radio" name="color" id="green">
+<input type="radio" name="color" id="yellow">
+
+<div class="product">
+
+    <div class="image"></div>
+
+    <div class="info">
+
+        <h1 class="title">
+            <span class="name">Koszulka Polo</span>
+            <span class="promo">Promocja!</span>
+        </h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quis adipisci maiores.</p>
+
+        <h3>Kolor</h3>
+        <div class="colors">
+            <label for="blue" class="dot blue"></label>
+            <label for="red" class="dot red"></label>
+            <label for="green" class="dot green"></label>
+            <label for="yellow" class="dot yellow"></label>
+        </div>
+
+        <h3>Rozmiar</h3>
+        <div class="sizes">
+            <button>S</button>
+            <button class="active">M</button>
+            <button>L</button>
+            <button>XL</button>
+        </div>
+
+        <div class="price">59,99 zł</div>
+        <button class="add">🛒 Do koszyka</button>
+
+    </div>
+</div>
+
+</body>
 </html>
