@@ -10,7 +10,6 @@ body {
   background: white;
 }
 
-
 a {
   color: #0066cc;
   text-decoration: none;
@@ -20,12 +19,10 @@ a:hover {
   text-decoration: underline;
 }
 
-
 :root {
     --img: url("../polo_b.png");
     --accent: #2b5faa;
 }
-
 
 #blue:checked  ~ .product { --img: url("../polo_b.png"); --accent:#2b5faa; }
 #red:checked   ~ .product { --img: url("../polo_r.png"); --accent:#d3352f; }
@@ -36,58 +33,63 @@ a:hover {
     width: min(100%, 900px);
     margin: 0 auto;
     padding: 20px;
-
     background: #eeeeee;
     border: 3px solid #ccc;
     border-radius: 12px;
-
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
 }
 
 .image {
     background: white var(--img) center/cover no-repeat;
-
     flex: 1 1 500px;
     min-width: 300px;
-
     width: min(500px, 100%);
-    aspect-ratio: 1 / 1;
-
+    aspect-ratio: 1/1;
     border: 3px solid var(--accent);
     border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.02);
 }
 
 .info {
     flex: 1 1 300px;
+    max-width: 300px;
     min-width: 300px;
-
     background: #eeeeee;
     padding: 10px;
     border-radius: 12px;
-
     display: flex;
     flex-direction: column;
-
     text-align: left;
     align-items: flex-start;
-}
-
-.product > .info {
-    order: 2; 
 }
 
 .product > .info:nth-child(2) {
     text-align: center;
     align-items: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+.product > .info:nth-child(2) .title {
+    justify-content: center;
 }
 
 .title {
     display: flex;
     align-items: center;
     gap: 8px;
+    width: 100%;
+}
+
+.title .name {
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .promo {
@@ -96,6 +98,7 @@ a:hover {
     padding: 2px 8px;
     border-radius: 6px;
     font-size: 0.75rem;
+    font-weight: 600;
     line-height: 1;
     white-space: nowrap;
 }
@@ -116,13 +119,18 @@ input[type="radio"] {
     justify-content: center;
 }
 
-
 .dot {
     width: 28px;
     height: 28px;
     border-radius: 50%;
     border: 3px solid #555;
     cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.dot:hover {
+    transform: scale(1.15);
+    border-color: var(--accent);
 }
 
 .blue  { background:#2b5faa; }
@@ -130,6 +138,11 @@ input[type="radio"] {
 .green { background:#2a8f3c; }
 .yellow{ background:#e8bc22; }
 
+@keyframes sizeSelect {
+    0%   { transform: scale(0.9); }
+    50%  { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}
 
 .sizes {
     display: flex;
@@ -143,17 +156,31 @@ input[type="radio"] {
     justify-content: center;
 }
 
-.sizes button {
+.sizes input[type="radio"] {
+    display: none;
+}
+
+.size-option {
     padding: 8px 16px;
     background: white;
     border: 2px solid #444;
     border-radius: 6px;
     cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.sizes button.active {
+.size-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.sizes input[type="radio"]:checked + .size-option {
     background: var(--accent);
+    border-color: var(--accent);
     color: white;
+    animation: sizeSelect 0.35s ease;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.20);
 }
 
 .price {
@@ -170,4 +197,10 @@ input[type="radio"] {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add:hover {
+    transform: translateY(-2px) scale(1.02);
+    background: color-mix(in srgb, var(--accent) 85%, black);
 }
