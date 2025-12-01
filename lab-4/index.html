@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <title>Lab 4</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <header class="page-header">
+      <h1>Tablica Kanban</h1>
+    </header>
+
+    <main class="board">
+      <section class="column" data-column="todo">
+        <header class="column-header">
+          <h2>Do zrobienia</h2>
+          <div class="column-tools">
+            <button class="btn-add-card">Dodaj kartę</button>
+            <button class="btn-color-column">Koloruj kolumnę</button>
+            <button class="btn-sort-column">Sortuj</button>
+          </div>
+          <div class="column-info">
+            Liczba kart: <span class="column-count">0</span>
+          </div>
+        </header>
+        <div class="column-body"></div>
+      </section>
+
+      <section class="column" data-column="doing">
+        <header class="column-header">
+          <h2>W trakcie</h2>
+          <div class="column-tools">
+            <button class="btn-add-card">Dodaj kartę</button>
+            <button class="btn-color-column">Koloruj kolumnę</button>
+            <button class="btn-sort-column">Sortuj</button>
+          </div>
+          <div class="column-info">
+            Liczba kart: <span class="column-count">0</span>
+          </div>
+        </header>
+        <div class="column-body"></div>
+      </section>
+
+      <section class="column" data-column="done">
+        <header class="column-header">
+          <h2>Zrobione</h2>
+          <div class="column-tools">
+            <button class="btn-add-card">Dodaj kartę</button>
+            <button class="btn-color-column">Koloruj kolumnę</button>
+            <button class="btn-sort-column">Sortuj</button>
+          </div>
+          <div class="column-info">
+            Liczba kart: <span class="column-count">0</span>
+          </div>
+        </header>
+        <div class="column-body"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
