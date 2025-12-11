@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kształty</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin: 30px; }
+    .controls { margin-bottom: 12px; }
+    button { margin: 4px; padding: 12px; min-width: 150px; cursor: pointer; }
+    .counters { margin: 12px 0; }
+    #board { margin: 12px auto; max-width: 750px; min-height: 200px;
+      border: 2px dashed #aaa; padding: 12px; background: #fafafa;
+      display: flex; flex-wrap: wrap; gap: 10px; }
+    .shape { width: 60px; height: 60px; border: 3px solid black; cursor: pointer; transition: transform .2s; }
+    .shape:hover { transform: scale(1.12); }
+    .square { border-radius: 6px; }
+    .circle { border-radius: 50%; }
+  </style>
+</head>
+<body>
+
+<div class="controls">
+  <button id="btnAddSquare">Dodaj kwadrat</button>
+  <button id="btnAddCircle">Dodaj kółko</button>
+  <button id="btnRecolorSquares">Przekoloruj kwadraty</button>
+  <button id="btnRecolorCircles">Przekoloruj kółka</button>
+</div>
+
+<div class="counters">
+  Kwadraty: <strong id="countSquares">0</strong> |
+  Kółka: <strong id="countCircles">0</strong>
+</div>
+
+<div id="board"></div>
+
+<script src="./helpers.js"></script>
+<script src="./store.js"></script>
+<script src="./ui.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
